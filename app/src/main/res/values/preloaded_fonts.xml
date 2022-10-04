@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/abril_fatface</item>
+        <item>@font/noto_serif_bold_italic</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/sigmar_one</item>
+        <item>@font/simonetta_italic</item>
+    </array>
+</resources>

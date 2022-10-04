@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:weightSum="10"
+        android:background="@drawable/border_radius"
+        android:backgroundTint="#f9f8f2"
+
+        >
+        <ImageView
+
+            android:id="@+id/imgHinh"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+
+            android:layout_weight="3"
+            android:padding="20dp"
+            android:layout_marginEnd="5dp"
+
+            />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:weightSum="2"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/tvName"
+
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left|center"
+                android:text="Ten"
+                android:textColor="@color/txtColor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border_bottom_solid"
+                android:layout_marginBottom="3dp"
+                >
+
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:weightSum="3">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center|left"
+
+                    android:text="Đánh giá:"
+                    android:textColor="@color/txtColor"
+                    android:textSize="15dp"
+
+                    android:textStyle="italic" />
+
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:numStars="5"
+                    android:progressTint="@color/txtColor"
+
+                    android:rating="2"
+                    android:stepSize="1"
+                    android:isIndicator="true"
+                    >
+
+                </RatingBar>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginBottom="2dp"
+
+                >
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/anton"
+                    android:foregroundGravity="left|center"
+                    android:gravity="center_vertical"
+                    android:text="50$"
+                    android:textColor="@color/txtColor"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/likeProduct"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_icon_like"
+
+
+
+
+                    >
+
+
+                </ImageView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
