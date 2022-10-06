@@ -95,18 +95,21 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("pass",pass);
                     editor.putBoolean("nho",true);
                     editor.commit();
-                    Toast.makeText(this, "Lưu rồi", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "Lưu rồi", Toast.LENGTH_SHORT).show();
                 }else{
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
                     editor.remove("email");
                     editor.remove("pass");
                     editor.remove("nho");
-                    Toast.makeText(this, "Quên rồi", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "Quên rồi", Toast.LENGTH_SHORT).show();
                 }
 
                 Intent i = new Intent(MainActivity.this,index.class);
-                ;
+                User user = new User();
+                user.setEmail(email);
+                user.setPass(pass);
+                i.putExtra("user",user);
                 startActivity(i);
             }
 

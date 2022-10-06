@@ -74,10 +74,12 @@
                 android:background="@drawable/border_radius"
                 android:backgroundTint="#bfb199"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/txtColor"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,7 +111,7 @@
                     android:textColor="@color/txtColor"
 
                     android:textSize="20sp"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <ImageButton
                     android:id="@+id/eye"
@@ -127,7 +129,7 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
 
@@ -137,17 +139,29 @@
                     android:id="@+id/cbNho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center">
+                    android:gravity="center"
+                    tools:ignore="TouchTargetSizeCheck">
 
                 </CheckBox>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-
                     android:text="Nhớ tài khoản"
                     android:textColor="@color/txtColor"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:text="Quên mật khẩu"
+                    android:textSize="16dp"
+                    android:textColor="@color/txtColor"
+                    android:paddingEnd="5dp"
                     android:textStyle="bold">
 
                 </TextView>
