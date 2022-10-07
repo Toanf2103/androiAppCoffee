@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background"
+    android:background="@drawable/background_cafe"
 
     android:gravity="center_vertical"
     tools:context=".Activity.MainActivity">
@@ -15,19 +15,19 @@
         android:orientation="vertical"
         android:paddingHorizontal="40dp"
         android:paddingVertical="0dp"
-        android:weightSum="3">
+        android:weightSum="5">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
 
             android:gravity="center">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo"></ImageView>
+                android:src="@drawable/ic_logo"></ImageView>
 
         </LinearLayout>
 
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/noto_serif_bold_italic"
-                android:text="Đăng Ký"
+                android:text="Đăng Nhập"
                 android:textAlignment="center"
                 android:textColor="@color/txtColor"
                 android:textSize="30sp"
@@ -61,68 +61,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/txtColor"
                 android:text="Email">
 
             </TextView>
 
             <EditText
                 android:id="@+id/edtEmail"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:background="@drawable/border_radius"
                 android:backgroundTint="#bfb199"
                 android:inputType="textPersonName"
-                android:textColor="@color/txtColor"
+                android:minHeight="48dp"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
-                android:text="qdasdas"
-                android:textSize="20sp" />
+                android:textColor="@color/txtColor"
+                android:textSize="20sp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textColor="@color/txtColor"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Mật khẩu">
-
-            </TextView>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-
-                android:layout_marginHorizontal="5dp"
-
-                android:backgroundTint="@color/black">
-
-                <EditText
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_radius"
-                    android:backgroundTint="#bfb199"
-                    android:inputType="textPassword"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="10dp"
-                    android:text="asdsad"
-                    android:textColor="@color/txtColor"
-
-                    android:textSize="20sp"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/txtColor"
-                android:text="Nhập nhận mật khẩu">
 
             </TextView>
 
@@ -144,35 +108,87 @@
                     android:inputType="textPassword"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="10dp"
-                    android:text="asdsad"
                     android:textColor="@color/txtColor"
 
-
                     android:textSize="20sp"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+                <ImageButton
+                    android:id="@+id/eye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    android:src="@drawable/ic_eye"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck">
+
+                </ImageButton>
             </RelativeLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
 
+                >
+
+                <CheckBox
+                    android:id="@+id/cbNho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:ignore="TouchTargetSizeCheck">
+
+                </CheckBox>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhớ tài khoản"
+                    android:textColor="@color/txtColor"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:text="Quên mật khẩu"
+                    android:textSize="16dp"
+                    android:textColor="@color/txtColor"
+                    android:paddingEnd="5dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingVertical="10dp">
+                android:paddingVertical="5dp">
 
                 <Button
+                    android:id="@+id/loginBtn"
                     android:layout_width="wrap_content"
+
+
                     android:layout_height="wrap_content"
-
-
                     android:layout_gravity="center"
                     android:background="@drawable/border_radius"
                     android:backgroundTint="#bfb199"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:paddingHorizontal="20dp"
-                    android:text="Đăng ký"
+                    android:text="Đăng nhập"
                     android:textColor="@color/txtColor"
                     android:textSize="14sp"
                     android:textStyle="bold">
@@ -182,6 +198,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_marginTop="5dp"
                     android:gravity="center">
 
@@ -189,17 +206,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/txtColor"
-                        android:text="Bạn đã có tài khoản?">
+                        android:text="Bạn chưa có tài khoản?">
 
                     </TextView>
 
                     <TextView
-                        android:id="@+id/tvDangNhap"
+                        android:id="@+id/btnDangKi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="5dp"
+                        android:text="Đăng kí"
                         android:textColor="@color/txtColor"
-                        android:text="Đăng nhập"
                         android:textStyle="bold"></TextView>
                 </LinearLayout>
 
@@ -207,6 +224,7 @@
 
 
         </LinearLayout>
+
 
 
     </LinearLayout>

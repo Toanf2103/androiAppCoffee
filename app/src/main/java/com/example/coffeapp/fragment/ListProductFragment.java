@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.coffeapp.Cafe;
-import com.example.coffeapp.CafeApdater;
+import com.example.coffeapp.Model.Cafe;
+import com.example.coffeapp.apdater.CafeApdater;
 import com.example.coffeapp.R;
-import com.example.coffeapp.TruyenUser;
-import com.example.coffeapp.User;
+import com.example.coffeapp.Model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,7 +91,7 @@ public class ListProductFragment extends ListFragment{
         cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
         cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,true));
         cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
-        Toast.makeText(getActivity(), user.getEmail(), Toast.LENGTH_SHORT).show();
+
 //        cafeArrayList.add(new Cafe("Cafe-3","30000",3,R.drawable.cafe3));
 //        cafeArrayList.add(new Cafe("Cafe-4","40000",3,R.drawable.cafe4));
 //        cafeArrayList.add(new Cafe("Cafe-5","50000",3,R.drawable.cafe5));

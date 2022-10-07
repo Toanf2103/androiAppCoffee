@@ -1,4 +1,4 @@
-package com.example.coffeapp;
+package com.example.coffeapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.coffeapp.R;
 
 public class Singin extends AppCompatActivity {
     TextView tvDangNhap;
@@ -23,7 +25,7 @@ public class Singin extends AppCompatActivity {
         tvDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Singin.this,MainActivity.class);
+                Intent i = new Intent(Singin.this, login.class);
                 startActivity(i);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.coffeapp;
+package com.example.coffeapp.Model;
 
 import java.io.Serializable;
 

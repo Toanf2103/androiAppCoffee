@@ -3,16 +3,13 @@ package com.example.coffeapp.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-import com.example.coffeapp.Cafe;
-import com.example.coffeapp.CafeApdater;
-import com.example.coffeapp.ListProduct;
+import com.example.coffeapp.Model.Cafe;
+import com.example.coffeapp.apdater.CafeApdater;
 import com.example.coffeapp.R;
 
 import java.util.ArrayList;

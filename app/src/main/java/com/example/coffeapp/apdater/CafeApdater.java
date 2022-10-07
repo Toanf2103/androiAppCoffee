@@ -1,18 +1,15 @@
-package com.example.coffeapp;
+package com.example.coffeapp.apdater;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.VectorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.coffeapp.Model.Cafe;
+import com.example.coffeapp.R;
 
 import java.util.List;
 
@@ -64,18 +61,9 @@ public class CafeApdater extends BaseAdapter {
             holder=(ViewHolder)  convertView.getTag();
         }
         Cafe cafe = cafeList.get(position);
-
-
-
-
-
-
-
         holder.txtName.setText(cafe.getName());
         holder.txtPrice.setText(cafe.getPrice());
 
-
-//        VectorDrawable hehe = (VectorDrawable) holder.likeProduct.getBackground();
         if (cafe.getLike()){
             holder.likeProduct.setImageResource(R.drawable.ic_icon_like);
         } else {

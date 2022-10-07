@@ -1,8 +1,5 @@
 package com.example.coffeapp.fragment;
 
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -10,8 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.coffeapp.TruyenUser;
-import com.example.coffeapp.User;
+import com.example.coffeapp.Interface.TruyenUser;
+import com.example.coffeapp.Model.User;
 
 public class ViewPageAdapter extends FragmentStateAdapter implements TruyenUser {
     User user;

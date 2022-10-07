@@ -1,4 +1,4 @@
-package com.example.coffeapp;
+package com.example.coffeapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Selection;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -16,7 +15,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.coffeapp.Model.User;
+import com.example.coffeapp.R;
+
+public class login extends AppCompatActivity {
     TextView txtSinup;
     Button btnLogin;
     ImageButton eye;
@@ -28,17 +30,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
+        setContentView(R.layout.activity_login);
         anhXa();
+        sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
+        hiddenPass();
+        quaDangKi();
+        login();
         edtEmail.setText(sharedPreferences.getString("email",""));
         edtPass.setText(sharedPreferences.getString("pass",""));
         cbNho.setChecked(sharedPreferences.getBoolean("nho",false));
-
-
-        quaDangKi();
-        login();
-        hiddenPass();
     }
     private void anhXa(){
         eye = (ImageButton) findViewById(R.id.eye);
@@ -48,18 +48,15 @@ public class MainActivity extends AppCompatActivity {
         btnLogin =(Button) findViewById(R.id.loginBtn);
         cbNho=(CheckBox) findViewById(R.id.cbNho);
 
-    }
 
+    }
     private void quaDangKi(){
         tvDangKi.setOnClickListener(v -> {
 
-
-
-            Intent i = new Intent(MainActivity.this,Singin.class);
+            Intent i = new Intent(login.this, Singin.class);
             startActivity(i);
         });
     }
-
     private void hiddenPass(){
         eye.setTag(R.drawable.ic_eye);
 
@@ -94,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("email",email);
                     editor.putString("pass",pass);
                     editor.putBoolean("nho",true);
+                    editor.putBoolean("login",true);
                     editor.commit();
 //                    Toast.makeText(this, "Lưu rồi", Toast.LENGTH_SHORT).show();
                 }else{
@@ -102,10 +100,12 @@ public class MainActivity extends AppCompatActivity {
                     editor.remove("email");
                     editor.remove("pass");
                     editor.remove("nho");
+                    editor.putBoolean("login",true);
+                    editor.commit();
 //                    Toast.makeText(this, "Quên rồi", Toast.LENGTH_SHORT).show();
                 }
 
-                Intent i = new Intent(MainActivity.this,index.class);
+                Intent i = new Intent(login.this,index.class);
                 User user = new User();
                 user.setEmail(email);
                 user.setPass(pass);

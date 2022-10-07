@@ -1,23 +1,25 @@
-package com.example.coffeapp;
+package com.example.coffeapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.coffeapp.fragment.ListProductFragment;
+import com.example.coffeapp.R;
+import com.example.coffeapp.Interface.SwapActivity;
+import com.example.coffeapp.Model.User;
 import com.example.coffeapp.fragment.ViewPageAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class index extends AppCompatActivity {
+public class index extends AppCompatActivity implements SwapActivity {
     private ViewPager2 viewPager2;
     private BottomNavigationView bottomNavigationView;
-
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,5 +68,18 @@ public class index extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void logout() {
+        Intent i = new Intent(index.this, login.class);
+
+        sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+        editor.remove("login");
+        editor.commit();
+        startActivity(i);
     }
 }
