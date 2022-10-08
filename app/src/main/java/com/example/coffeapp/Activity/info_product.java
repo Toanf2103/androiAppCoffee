@@ -29,7 +29,7 @@ public class info_product extends AppCompatActivity {
 //        user = (User) i.getSerializableExtra("user");
         anhXa();
         name.setText(cafe.getName());
-        price.setText(cafe.getPrice());
+        price.setText(cafe.getPrice()+"$");
         if (cafe.getLike()){
            like.setImageResource(R.drawable.ic_icon_like);
         } else {

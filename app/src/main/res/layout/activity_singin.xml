@@ -15,12 +15,12 @@
         android:orientation="vertical"
         android:paddingHorizontal="40dp"
         android:paddingVertical="0dp"
-        android:weightSum="3">
+        android:weightSum="5">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
 
             android:gravity="center">
 
@@ -75,7 +75,9 @@
                 android:backgroundTint="#bfb199"
                 android:inputType="textPersonName"
                 android:textColor="@color/txtColor"
-                android:paddingHorizontal="15dp"
+                android:drawableLeft="@drawable/ic_email_icon"
+
+                android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="qdasdas"
                 android:textSize="20sp" />
@@ -106,7 +108,8 @@
                     android:background="@drawable/border_radius"
                     android:backgroundTint="#bfb199"
                     android:inputType="textPassword"
-                    android:paddingHorizontal="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:drawableLeft="@drawable/ic_pass_icon"
                     android:paddingVertical="10dp"
                     android:text="asdsad"
                     android:textColor="@color/txtColor"
@@ -142,7 +145,8 @@
                     android:background="@drawable/border_radius"
                     android:backgroundTint="#bfb199"
                     android:inputType="textPassword"
-                    android:paddingHorizontal="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:drawableLeft="@drawable/ic_pass_icon"
                     android:paddingVertical="10dp"
                     android:text="asdsad"
                     android:textColor="@color/txtColor"

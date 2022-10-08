@@ -116,8 +116,8 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_icon_cart">
 
             </ImageView>
@@ -163,8 +163,8 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_icon_like">
 
             </ImageView>
@@ -209,9 +209,54 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_icon_like">
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_save_product_icon">
+
+            </ImageView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="10dp"
+                android:text="Đã lưu"
+                android:textColor="@color/txtColor"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_pass_button"
+
+                >
+
+            </ImageView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/border_bottom_solid"
+            android:backgroundTint="@color/bgColor"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f9f8f2"
+
+            android:gravity="center_vertical"
+
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_sodu_icon">
 
             </ImageView>
 
@@ -256,9 +301,9 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_icon_cart">
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_setting_info">
 
             </ImageView>
 
@@ -303,9 +348,9 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_icon_like">
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_icon_about">
 
             </ImageView>
 
@@ -349,9 +394,9 @@
             android:paddingVertical="10dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_icon_like">
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_icon_contact">
 
             </ImageView>
 

@@ -98,14 +98,17 @@ public class ListProductFragment extends ListFragment{
         setListAdapter(apdater);
         return view;
     }
+
     private void anhXa(){
 
         cafeArrayList = new ArrayList<>();
 
-        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.cafe2,true));
-        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
-        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,true));
-        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
+        cafeArrayList.add(new Cafe("Bạc xỉu","20000",1,R.drawable.cafe2,true));
+        cafeArrayList.add(new Cafe("Đen đá không đường","30000",2,R.drawable.cafe2,false));
+        cafeArrayList.add(new Cafe("Cafe sài gòn","40000",3,R.drawable.cafe2,true));
+        cafeArrayList.add(new Cafe("Cafe trứng","50000",4,R.drawable.cafe2,false));
+        cafeArrayList.add(new Cafe("Cafe đen","60000",5,R.drawable.cafe2,true));
+        cafeArrayList.add(new Cafe("Cafe nhìu đen","80000",3,R.drawable.cafe2,false));
 
 //        cafeArrayList.add(new Cafe("Cafe-3","30000",3,R.drawable.cafe3));
 //        cafeArrayList.add(new Cafe("Cafe-4","40000",3,R.drawable.cafe4));

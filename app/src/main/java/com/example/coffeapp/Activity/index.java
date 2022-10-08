@@ -70,7 +70,7 @@ public class index extends AppCompatActivity implements SwapActivity {
 
 
     }
-
+    
     @Override
     public void logout() {
         Intent i = new Intent(index.this, login.class);
@@ -90,4 +90,5 @@ public class index extends AppCompatActivity implements SwapActivity {
         i.putExtra("product",cafe);
         startActivity(i);
     }
+
 }

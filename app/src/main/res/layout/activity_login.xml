@@ -74,8 +74,9 @@
                 android:background="@drawable/border_radius"
                 android:backgroundTint="#bfb199"
                 android:inputType="textPersonName"
+                android:drawableLeft="@drawable/ic_email_icon"
                 android:minHeight="48dp"
-                android:paddingHorizontal="15dp"
+                android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/txtColor"
                 android:textSize="20sp"
@@ -106,9 +107,10 @@
                     android:background="@drawable/border_radius"
                     android:backgroundTint="#bfb199"
                     android:inputType="textPassword"
-                    android:paddingHorizontal="15dp"
+                    android:paddingHorizontal="10dp"
                     android:paddingVertical="10dp"
                     android:textColor="@color/txtColor"
+                    android:drawableLeft="@drawable/ic_pass_icon"
 
                     android:textSize="20sp"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -148,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nhớ tài khoản"
+                    android:layout_weight="1"
                     android:textColor="@color/txtColor"
                     >
 
@@ -156,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+
                     android:gravity="center|right"
                     android:text="Quên mật khẩu"
                     android:textSize="16dp"
