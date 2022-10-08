@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.coffeapp.Model.Cafe;
 import com.example.coffeapp.R;
 import com.example.coffeapp.Interface.SwapActivity;
 import com.example.coffeapp.Model.User;
@@ -80,6 +81,13 @@ public class index extends AppCompatActivity implements SwapActivity {
 
         editor.remove("login");
         editor.commit();
+        startActivity(i);
+    }
+
+    @Override
+    public void infoProduct(Cafe cafe) {
+        Intent i = new Intent(index.this, info_product.class);
+        i.putExtra("product",cafe);
         startActivity(i);
     }
 }

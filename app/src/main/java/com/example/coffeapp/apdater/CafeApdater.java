@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.coffeapp.Interface.SwapActivity;
 import com.example.coffeapp.Model.Cafe;
 import com.example.coffeapp.R;
 
@@ -18,6 +21,7 @@ public class CafeApdater extends BaseAdapter {
     private Context context;
     private int layout;
     private List<Cafe> cafeList;
+
 
     public CafeApdater(Context context, int layout, List<Cafe> cafeList) {
         this.context = context;
@@ -87,6 +91,8 @@ public class CafeApdater extends BaseAdapter {
                 }
             }
         });
+
+
         return convertView;
 
     }

@@ -1,6 +1,8 @@
 package com.example.coffeapp.Model;
 
-public class Cafe {
+import java.io.Serializable;
+
+public class Cafe implements Serializable {
     private String name;
     private String price;
     private Integer rate;

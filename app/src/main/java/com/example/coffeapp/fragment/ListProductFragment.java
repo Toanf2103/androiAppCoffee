@@ -1,15 +1,19 @@
 package com.example.coffeapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.coffeapp.Interface.SwapActivity;
 import com.example.coffeapp.Model.Cafe;
 import com.example.coffeapp.apdater.CafeApdater;
 import com.example.coffeapp.R;
@@ -24,10 +28,10 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class ListProductFragment extends ListFragment{
-    CafeApdater apdater;
-    List<Cafe> cafeArrayList;
-    User user;
-
+    private CafeApdater apdater;
+    private List<Cafe> cafeArrayList;
+    private User user;
+    private SwapActivity swapActivityn ;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -66,6 +70,12 @@ public class ListProductFragment extends ListFragment{
     }
 
     @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        swapActivityn.infoProduct(cafeArrayList.get(position));
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -77,11 +87,16 @@ public class ListProductFragment extends ListFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_list_product, container, false);
+
+        swapActivityn = (SwapActivity) getActivity();
+
+
         anhXa();
         // Inflate the layout for this fragment
         apdater = new CafeApdater(getActivity(),R.layout.item_coffee,cafeArrayList);
         setListAdapter(apdater);
-        return inflater.inflate(R.layout.fragment_list_product, container, false);
+        return view;
     }
     private void anhXa(){
 
