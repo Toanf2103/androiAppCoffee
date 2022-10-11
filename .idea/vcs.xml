@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BMI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SwapActivity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android.ProfileUI-main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android.TH_UI-main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/loginAS-main" vcs="Git" />
+  </component>
+</project>
