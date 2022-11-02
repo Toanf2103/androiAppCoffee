@@ -25,7 +25,7 @@ public class index extends AppCompatActivity implements SwapActivity {
     private BottomNavigationView bottomNavigationView;
     SharedPreferences sharedPreferences;
     private User user;
-    int i=2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,10 +34,18 @@ public class index extends AppCompatActivity implements SwapActivity {
         Intent i = getIntent();
         user = (User) i.getSerializableExtra("user");
 
+
         viewPager2 = findViewById(R.id.view_page);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this,user);
         viewPager2.setAdapter(viewPageAdapter);
+        int vitri = i.getIntExtra("vitri",0);
+        if(vitri!=0){
+            bottomNavigationView.getMenu().findItem(R.id.action_profile).setChecked(true);
+            viewPager2.setCurrentItem(3);
+
+        }
+
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

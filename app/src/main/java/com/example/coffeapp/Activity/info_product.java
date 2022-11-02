@@ -120,6 +120,7 @@ public class info_product extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(info_product.this,index.class);
                 i.putExtra("user",user);
+
                 startActivity(i);
             }
         });

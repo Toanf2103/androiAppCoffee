@@ -43,6 +43,7 @@ public class EditUser extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(EditUser.this, index.class);
                 i.putExtra("user",user);
+                i.putExtra("vitri",3);
                 startActivity(i);
             }
         });
@@ -96,6 +97,7 @@ public class EditUser extends AppCompatActivity {
                                 us.setName(u.getName());
                                 us.setEmail(u.getEmail());
                                 i.putExtra("user",us);
+                                i.putExtra("vitri",3);
                                 startActivity(i);
                             }
 

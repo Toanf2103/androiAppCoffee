@@ -127,6 +127,7 @@ public class CartActivity extends AppCompatActivity {
 
                 Intent i = new Intent(CartActivity.this,index.class);
                 i.putExtra("user",user);
+                i.putExtra("vitri",3);
                 startActivity(i);
             }
         });
