@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.example.coffeapp.Model.User;
 import com.example.coffeapp.R;
 import com.example.coffeapp.Interface.SwapActivity;
 
@@ -19,11 +22,18 @@ import com.example.coffeapp.Interface.SwapActivity;
  */
 public class InfomationFragment extends Fragment {
 
+    private User user;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private TextView tvEditUser,tvEmailUser;
     private Button btnLogout;
+    private LinearLayout lnEditUser;
+    private  LinearLayout lnCart;
+
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -31,6 +41,10 @@ public class InfomationFragment extends Fragment {
 
     public InfomationFragment() {
         // Required empty public constructor
+    }
+    public InfomationFragment(User user) {
+        // Required empty public constructor
+        this.user =user;
     }
 
     /**
@@ -75,6 +89,30 @@ public class InfomationFragment extends Fragment {
 
 
                 swapActivityn.logout();
+            }
+        });
+
+        tvEditUser = view.findViewById(R.id.tvEditUser);
+        tvEmailUser = view.findViewById(R.id.tvEmailUser);
+        lnEditUser = view.findViewById(R.id.lnEditUser);
+        lnCart = view.findViewById(R.id.cart);
+
+        tvEditUser.setText(user.getName());
+        tvEmailUser.setText(user.getEmail());
+
+
+        lnEditUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swapActivityn = (SwapActivity) getActivity();
+                swapActivityn.editUser();
+            }
+        });
+        lnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swapActivityn = (SwapActivity) getActivity();
+                swapActivityn.cart();
             }
         });
 

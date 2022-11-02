@@ -15,12 +15,22 @@ import android.widget.Toast;
 
 import com.example.coffeapp.Interface.SwapActivity;
 import com.example.coffeapp.Model.Cafe;
+
 import com.example.coffeapp.apdater.CafeApdater;
 import com.example.coffeapp.R;
 import com.example.coffeapp.Model.User;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -93,28 +103,74 @@ public class ListProductFragment extends ListFragment{
 
 
         anhXa();
+
         // Inflate the layout for this fragment
-        apdater = new CafeApdater(getActivity(),R.layout.item_coffee,cafeArrayList);
+        apdater = new CafeApdater(getActivity(),R.layout.item_coffee,cafeArrayList,user);
         setListAdapter(apdater);
+        getAllSp();
         return view;
     }
 
     private void anhXa(){
-
+//        service = new Ser();
+//
         cafeArrayList = new ArrayList<>();
-
-        cafeArrayList.add(new Cafe("Bạc xỉu","20000",1,R.drawable.cafe2,true));
-        cafeArrayList.add(new Cafe("Đen đá không đường","30000",2,R.drawable.cafe2,false));
-        cafeArrayList.add(new Cafe("Cafe sài gòn","40000",3,R.drawable.cafe2,true));
-        cafeArrayList.add(new Cafe("Cafe trứng","50000",4,R.drawable.cafe2,false));
-        cafeArrayList.add(new Cafe("Cafe đen","60000",5,R.drawable.cafe2,true));
-        cafeArrayList.add(new Cafe("Cafe nhìu đen","80000",3,R.drawable.cafe2,false));
+//        cafeArrayList= service.getAllSp();
+//        cafeArrayList.add(new Cafe("Bạc xỉu","20000",1,R.drawable.cafe4,true));
+//        cafeArrayList.add(new Cafe("Đen đá không đường","30000",2,R.drawable.cafe4,false));
+//        cafeArrayList.add(new Cafe("Cafe sài gòn","40000",3,R.drawable.cafe4,true));
+//        cafeArrayList.add(new Cafe("Cafe trứng","50000",4,R.drawable.cafe4,false));
+//        cafeArrayList.add(new Cafe("Cafe đen","60000",5,R.drawable.cafe4,true));
+//        cafeArrayList.add(new Cafe("Cafe nhìu đen","80000",3,R.drawable.cafe4,false));
 
 //        cafeArrayList.add(new Cafe("Cafe-3","30000",3,R.drawable.cafe3));
 //        cafeArrayList.add(new Cafe("Cafe-4","40000",3,R.drawable.cafe4));
 //        cafeArrayList.add(new Cafe("Cafe-5","50000",3,R.drawable.cafe5));
 //        cafeArrayList.add(new Cafe("Cafe-6","60000",3,R.drawable.cafe6));
 //        cafeArrayList.add(new Cafe("Cafe-7","70000",3,R.drawable.cafe7));
+
+    }
+    public void getAllSp(){
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("id_user", user.getId());
+
+        client.post(getString(R.string.link_host)+"getAllSp.php",params,new JsonHttpResponseHandler(){
+
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        try {
+
+                            if(response.getBoolean("trang_thai")){
+                                JSONArray data = response.getJSONArray("data");
+                                for (int i=0;i<data.length();i++){
+                                    Cafe cf = new Cafe();
+                                    JSONObject obj = data.getJSONObject(i);
+                                    cf.setId(obj.getInt("id"));
+                                    cf.setName(obj.getString("ten_sp"));
+                                    cf.setPrice(String.valueOf(obj.getDouble("gia")));
+
+                                    cf.setImg(obj.getString("hinh_anh"));
+                                    cf.setLike(obj.getBoolean("like"));
+                                    cf.setRate(3);
+                                    cafeArrayList.add(cf);
+                                }
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        apdater.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                    }
+                }
+        );
 
     }
 

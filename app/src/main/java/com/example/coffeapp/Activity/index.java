@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.example.coffeapp.CartActivity;
+import com.example.coffeapp.EditUser;
 import com.example.coffeapp.Model.Cafe;
 import com.example.coffeapp.R;
 import com.example.coffeapp.Interface.SwapActivity;
@@ -21,14 +24,15 @@ public class index extends AppCompatActivity implements SwapActivity {
     private ViewPager2 viewPager2;
     private BottomNavigationView bottomNavigationView;
     SharedPreferences sharedPreferences;
-
+    private User user;
+    int i=2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
         Intent i = getIntent();
-        User user = (User) i.getSerializableExtra("user");
+        user = (User) i.getSerializableExtra("user");
 
         viewPager2 = findViewById(R.id.view_page);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -37,6 +41,7 @@ public class index extends AppCompatActivity implements SwapActivity {
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
+
                 switch (position){
                     case 0:
                         bottomNavigationView.getMenu().findItem(R.id.action_home).setChecked(true);
@@ -87,7 +92,22 @@ public class index extends AppCompatActivity implements SwapActivity {
     @Override
     public void infoProduct(Cafe cafe) {
         Intent i = new Intent(index.this, info_product.class);
+        i.putExtra("user",user);
         i.putExtra("product",cafe);
+        startActivity(i);
+    }
+
+    @Override
+    public void editUser() {
+        Intent i = new Intent(index.this, EditUser.class);
+        i.putExtra("user",user);
+        startActivity(i);
+    }
+
+    @Override
+    public void cart() {
+        Intent i = new Intent(index.this, CartActivity.class);
+        i.putExtra("user",user);
         startActivity(i);
     }
 

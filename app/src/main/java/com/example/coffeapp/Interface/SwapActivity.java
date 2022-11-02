@@ -6,4 +6,7 @@ import com.example.coffeapp.Model.User;
 public interface SwapActivity {
     public void logout();
     public void infoProduct(Cafe cafe);
+    public void editUser();
+    public void cart();
+
 }

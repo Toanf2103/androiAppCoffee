@@ -3,14 +3,31 @@ package com.example.coffeapp.Model;
 import java.io.Serializable;
 
 public class Cafe implements Serializable {
+    private int id;
     private String name;
     private String price;
     private Integer rate;
-    private Integer img;
+    private String img;
     private Boolean like;
+    private int so_luong;
 
+    public int getSo_luong() {
+        return so_luong;
+    }
 
-    public Cafe(String name, String price, Integer rate, Integer img, Boolean like) {
+    public void setSo_luong(int so_luong) {
+        this.so_luong = so_luong;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Cafe(String name, String price, Integer rate, String img, Boolean like) {
         this.name = name;
         this.price = price;
         this.rate = rate;
@@ -29,11 +46,11 @@ public class Cafe implements Serializable {
     public Cafe() {
     }
 
-    public Integer getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(Integer img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

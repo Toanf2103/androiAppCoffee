@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Selection;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -18,6 +19,15 @@ import android.widget.Toast;
 import com.example.coffeapp.Model.User;
 import com.example.coffeapp.R;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+
 public class login extends AppCompatActivity {
     TextView txtSinup;
     Button btnLogin;
@@ -27,11 +37,16 @@ public class login extends AppCompatActivity {
     TextView tvDangKi;
     CheckBox cbNho;
     SharedPreferences sharedPreferences;
+
+    Boolean check;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         anhXa();
+
         sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
         hiddenPass();
         quaDangKi();
@@ -51,10 +66,15 @@ public class login extends AppCompatActivity {
 
     }
     private void quaDangKi(){
-        tvDangKi.setOnClickListener(v -> {
+        tvDangKi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            Intent i = new Intent(login.this, Singin.class);
-            startActivity(i);
+                Intent i = new Intent(login.this,Singin.class);
+                startActivity(i);
+
+
+            }
         });
     }
     private void hiddenPass(){
@@ -85,34 +105,71 @@ public class login extends AppCompatActivity {
             if (email.equals("")||pass.equals("")){
                 Toast.makeText(this, "Nhập tk mk bạn ơi", Toast.LENGTH_SHORT).show();
             }else{
-                if(cbNho.isChecked()){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.putString("email",email);
-                    editor.putString("pass",pass);
-                    editor.putBoolean("nho",true);
-                    editor.putBoolean("login",true);
-                    editor.commit();
-//                    Toast.makeText(this, "Lưu rồi", Toast.LENGTH_SHORT).show();
-                }else{
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.remove("email");
-                    editor.remove("pass");
-                    editor.remove("nho");
-                    editor.putBoolean("login",true);
-                    editor.commit();
-//                    Toast.makeText(this, "Quên rồi", Toast.LENGTH_SHORT).show();
-                }
+                dangNhap(new User(email,pass));
 
-                Intent i = new Intent(login.this,index.class);
-                User user = new User();
-                user.setEmail(email);
-                user.setPass(pass);
-                i.putExtra("user",user);
-                startActivity(i);
             }
 
         });
+    }
+    public void dangNhap(User user) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("email", user.getEmail());
+        params.put("pass", user.getPass());
+        client.post(getString(R.string.link_host)+"checkLogin.php", params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        try {
+                            check = response.getBoolean("trang_thai");
+                            String ten ;
+                            if (!check) {
+                                Toast.makeText(login.this, "Sai thông tin", Toast.LENGTH_SHORT).show();
+                            } else {
+                                if (cbNho.isChecked()) {
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                    editor.putString("id", String.valueOf(response.getInt("id")));
+                                    editor.putString("email", user.getEmail());
+                                    editor.putString("pass", user.getPass());
+                                    editor.putBoolean("nho", true);
+                                    editor.putBoolean("login", true);
+                                    editor.commit();
+//                    Toast.makeText(this, "Lưu rồi", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.remove("id");
+                                    editor.remove("email");
+                                    editor.remove("pass");
+                                    editor.remove("nho");
+                                    editor.putBoolean("login", true);
+                                    editor.commit();
+//                    Toast.makeText(this, "Quên rồi", Toast.LENGTH_SHORT).show();
+                                }
+
+                                Intent i = new Intent(login.this, index.class);
+                                User us = new User();
+
+
+                                us.setId(Integer.parseInt(response.getString("id")));
+                                us.setName(response.getString("ten"));
+                                us.setEmail(user.getEmail());
+                                i.putExtra("user",us);
+
+                                startActivity(i);
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                    }
+                }
+        );
+
     }
 }

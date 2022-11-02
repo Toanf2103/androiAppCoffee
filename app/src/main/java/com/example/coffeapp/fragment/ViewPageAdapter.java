@@ -34,11 +34,11 @@ public class ViewPageAdapter extends FragmentStateAdapter implements TruyenUser 
             case 0:
                 return new ListProductFragment(user);
             case 1:
-                return new ListProductLikeFragment();
+                return new ListProductLikeFragment(user);
             case 2:
-                return  new InfomationFragment();
+                return  new InfomationFragment(user);
             default:
-                return new ListProductFragment();
+                return new ListProductFragment(user);
         }
 
 
