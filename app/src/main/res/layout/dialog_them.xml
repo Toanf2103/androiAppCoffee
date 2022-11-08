@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog"
+    android:paddingVertical="20dp"
+    >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="THÊM MỚI SINH VIÊN"
+        android:textSize="30dp"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/edtNameAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập tên sinh viên"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="10dp">
+    </EditText>
+    <EditText
+        android:id="@+id/edtClassAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập lớp sinh viên"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="10dp">
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:weightSum="2"
+        >
+        <Button
+            android:id="@+id/btnHuy"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Hủy"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="#999999"
+            android:layout_marginRight="10dp"
+            >
+        </Button>
+        <Button
+            android:id="@+id/btnThemSv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Thêm"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="#6495ED"
+            android:layout_marginRight="10dp"
+            >
+        </Button>
+    </LinearLayout>
+
+
+</LinearLayout>
