@@ -38,7 +38,7 @@
             android:layout_height="40dp"
             android:layout_weight="12"
             android:gravity="center"
-            android:text="DANH SÁC SINH VIÊN"
+            android:text="DANH SÁC CÂY"
 
             android:textSize="30dp"
             >

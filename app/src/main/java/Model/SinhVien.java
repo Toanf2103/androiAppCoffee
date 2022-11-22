@@ -1,8 +1,9 @@
 package Model;
 
 
+import java.io.Serializable;
 
-public class SinhVien {
+public class SinhVien implements Serializable {
     int id;
     String lop;
     String ten;

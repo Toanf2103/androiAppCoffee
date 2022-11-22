@@ -4,10 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/border_radius.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/border_radius_btn.xml" value="0.1485" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/dialog.xml" value="0.1485" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/ic_back_btn.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/ic_icon_email.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/ic_icon_pass.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/drawable/ic_thung_rac.xml" value="0.1485" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/activity_index.xml" value="0.25416666666666665" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/activity_info_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/activity_singup.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/dialog_them.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Project/Firebase/app/src/main/res/layout/item_list.xml" value="0.25416666666666665" />
       </map>

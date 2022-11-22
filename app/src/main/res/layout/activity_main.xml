@@ -4,79 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="7"
+    tools:context=".MainActivity"
+    android:weightSum="3"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/background"
+    android:paddingHorizontal="60dp"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@drawable/ic_wave"
-        >
+        android:layout_weight="1">
 
+        <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"
+            app:riv_border_color="#333333"
+            app:riv_corner_radius="60dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="true" />
 
     </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:paddingHorizontal="30dp"
+        android:layout_weight="2"
         android:orientation="vertical"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EMAIL"
-            android:textSize="20dp"
-            >
 
-        </TextView>
-        <EditText
-            android:id="@+id/tvEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:hint="Nhập email"
-            android:text="1@gmail.com"
-            >
-        </EditText>
-        <TextView
-
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mật khẩu"
-            android:textSize="20dp"
-            >
-        </TextView>
-        <EditText
-            android:id="@+id/tvPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:hint="Nhập mật khẩu"
-            android:inputType="textPassword"
-            android:text="123456"
-            >
-        </EditText>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="15dp"
+            android:textColor="#000000"
             android:layout_gravity="center"
-            android:background="@drawable/border_radius"
-            android:backgroundTint="#6495ED"
-            android:paddingHorizontal="40dp"
-            android:text="Đăng nhập"
-            android:textColor="#fff"></Button>
+            ></TextView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/emailEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_icon_email"
+                android:drawablePadding="7dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Nhập email"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#d5d8de"
+                android:textSize="20dp"></EditText>
+
+            <EditText
+                android:id="@+id/passEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_icon_pass"
+                android:drawablePadding="7dp"
+                android:fontFamily="@font/roboto"
+                android:hint="*********"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#d5d8de"
+                android:textSize="20dp"></EditText>
+            <CheckBox
+                android:id="@+id/rememberCb"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textColor="#000000"
+                tools:ignore="TouchTargetSizeCheck"
+                android:text="Nhớ tài khoản"
+                >
+            </CheckBox>
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_radius_btn"
+                android:backgroundTint="#3de890"
+                android:fontFamily="@font/roboto"
+                android:paddingHorizontal="40dp"
+                android:text="ĐĂNG NHẬP"
+                android:textColor="#000000"
+                android:textSize="20dp">
+
+            </Button>
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn chưa có tài khoản?"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/singupTv"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#3de890"
+                android:text="ĐĂNG KÍ"
+                android:fontFamily="@font/roboto"
+                android:textSize="20dp">
+
+            </TextView>
+
+        </LinearLayout>
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>
