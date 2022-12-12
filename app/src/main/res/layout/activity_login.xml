@@ -143,6 +143,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     tools:ignore="TouchTargetSizeCheck"
+                    android:buttonTint="#bfb199"
 
 
                     >

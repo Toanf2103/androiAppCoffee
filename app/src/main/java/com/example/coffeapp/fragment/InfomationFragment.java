@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.coffeapp.Model.User;
 import com.example.coffeapp.R;
 import com.example.coffeapp.Interface.SwapActivity;
@@ -32,6 +34,7 @@ public class InfomationFragment extends Fragment {
     private Button btnLogout;
     private LinearLayout lnEditUser;
     private  LinearLayout lnCart;
+    private ImageView imgAvatar;
 
 
     // TODO: Rename and change types of parameters
@@ -96,6 +99,13 @@ public class InfomationFragment extends Fragment {
         tvEmailUser = view.findViewById(R.id.tvEmailUser);
         lnEditUser = view.findViewById(R.id.lnEditUser);
         lnCart = view.findViewById(R.id.cart);
+        imgAvatar=view.findViewById(R.id.imgHinh);
+
+        Glide
+                .with(view)
+                .load("https://timanhdep.com/wp-content/uploads/2022/07/hinh-anh-dai-dien-avatar-dep-cho-facebook-01.jpg")
+                .fitCenter()
+                .into(imgAvatar);
 
         tvEditUser.setText(user.getName());
         tvEmailUser.setText(user.getEmail());
