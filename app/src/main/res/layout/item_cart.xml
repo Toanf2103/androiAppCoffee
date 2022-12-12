@@ -80,7 +80,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="3"
+
                 android:layout_marginBottom="2dp"
 
                 >
@@ -93,26 +93,39 @@
                     android:fontFamily="@font/anton"
                     android:foregroundGravity="left|center"
                     android:gravity="center_vertical"
-                    android:text="50$"
+                    android:text="50 VND"
                     android:textColor="@color/txtColor"
                     android:textSize="20dp">
 
                 </TextView>
 
-                <TextView
-                    android:id="@+id/soLuong"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:textColor="@color/txtColor"
-                    android:textSize="19dp"
-                    android:text="SỐ LƯỢNG: 100">
 
-                </TextView>
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/soLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:textColor="@color/txtColor"
+                android:textSize="19dp"
+                android:text="SỐ LƯỢNG: 100">
+
+            </TextView>
         </LinearLayout>
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_icon_delete"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            >
+
+        </ImageButton>
 
     </LinearLayout>
+
 
 
 

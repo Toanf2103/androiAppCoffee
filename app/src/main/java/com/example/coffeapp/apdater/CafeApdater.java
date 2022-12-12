@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,6 +69,8 @@ public class CafeApdater extends BaseAdapter {
         TextView txtPrice;
         ImageView imgHinh;
         ImageView likeProduct;
+        RatingBar rate;
+
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -88,7 +91,7 @@ public class CafeApdater extends BaseAdapter {
 
 
             holder.likeProduct = (ImageView) convertView.findViewById(R.id.likeProduct);
-
+            holder.rate=convertView.findViewById(R.id.rateBar);
             convertView.setTag(holder);
         }else{
             holder=(ViewHolder)  convertView.getTag();
@@ -98,8 +101,8 @@ public class CafeApdater extends BaseAdapter {
 
 
         holder.txtName.setText(cafe.getName());
-        holder.txtPrice.setText(cafe.getPrice());
-
+        holder.txtPrice.setText(cafe.getStringPrice());
+        holder.rate.setRating(cafe.getRate());
         if (!cafe.getLike()){
             holder.likeProduct.setImageResource(R.drawable.ic_icon_like);
         } else {
@@ -116,6 +119,7 @@ public class CafeApdater extends BaseAdapter {
 
 
 
+
         holder.likeProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,18 +131,18 @@ public class CafeApdater extends BaseAdapter {
                 params.put("id_sp", cafe.getId());
 
                 if(cafe.getLike()){
-                    link="/unLikeSp.php";
+                    link="unLikeSp.php";
                 }else{
-                    link="/addSpLike.php";
+                    link="addSpLike.php";
                 }
-                client.post("https://toanf2103.000webhostapp.com/"+link,params,new JsonHttpResponseHandler(){
+
+                client.post("http://192.168.1.142/PHP_Ser/"+link,params,new JsonHttpResponseHandler(){
 
                             @Override
                             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                                 try {
 
                                     if(response.getBoolean("trang_thai")){
-
                                         cafe.setLike(!cafe.getLike());
 
                                         if (!cafe.getLike()){

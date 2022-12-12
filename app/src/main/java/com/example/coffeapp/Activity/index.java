@@ -40,9 +40,11 @@ public class index extends AppCompatActivity implements SwapActivity {
         ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this,user);
         viewPager2.setAdapter(viewPageAdapter);
         int vitri = i.getIntExtra("vitri",0);
+
         if(vitri!=0){
+
             bottomNavigationView.getMenu().findItem(R.id.action_profile).setChecked(true);
-            viewPager2.setCurrentItem(3);
+            viewPager2.setCurrentItem(vitri);
 
         }
 
@@ -74,7 +76,7 @@ public class index extends AppCompatActivity implements SwapActivity {
                         viewPager2.setCurrentItem(1);
                         break;
                     case R.id.action_profile:
-                        viewPager2.setCurrentItem(3);
+                        viewPager2.setCurrentItem(2);
                         break;
                 }
                 return true;
@@ -113,9 +115,11 @@ public class index extends AppCompatActivity implements SwapActivity {
     }
 
     @Override
-    public void cart() {
+    public void cart(int vitri) {
         Intent i = new Intent(index.this, CartActivity.class);
         i.putExtra("user",user);
+
+        i.putExtra("vitri",vitri);
         startActivity(i);
     }
 

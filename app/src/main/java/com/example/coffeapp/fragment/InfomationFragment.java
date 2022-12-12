@@ -112,7 +112,7 @@ public class InfomationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 swapActivityn = (SwapActivity) getActivity();
-                swapActivityn.cart();
+                swapActivityn.cart(2);
             }
         });
 

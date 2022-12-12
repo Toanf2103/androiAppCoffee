@@ -7,6 +7,6 @@ public interface SwapActivity {
     public void logout();
     public void infoProduct(Cafe cafe);
     public void editUser();
-    public void cart();
+    public void cart(int vitri);
 
 }

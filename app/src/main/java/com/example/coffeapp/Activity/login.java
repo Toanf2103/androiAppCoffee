@@ -2,6 +2,7 @@ package com.example.coffeapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class login extends AppCompatActivity {
     TextView tvDangKi;
     CheckBox cbNho;
     SharedPreferences sharedPreferences;
+    private ProgressDialog dialog;
 
     Boolean check;
 
@@ -62,6 +65,10 @@ public class login extends AppCompatActivity {
         tvDangKi =(TextView) findViewById(R.id.btnDangKi);
         btnLogin =(Button) findViewById(R.id.loginBtn);
         cbNho=(CheckBox) findViewById(R.id.cbNho);
+        dialog= new ProgressDialog(this);
+        dialog.setTitle("Đăng nhập");
+        dialog.setMessage("Vui lòng chờ");
+
 
 
     }
@@ -118,6 +125,7 @@ public class login extends AppCompatActivity {
         RequestParams params = new RequestParams();
         params.put("email", user.getEmail());
         params.put("pass", user.getPass());
+        dialog.show();
         client.post(getString(R.string.link_host)+"checkLogin.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -156,17 +164,21 @@ public class login extends AppCompatActivity {
                                 us.setName(response.getString("ten"));
                                 us.setEmail(user.getEmail());
                                 i.putExtra("user",us);
-
+                                dialog.dismiss();
                                 startActivity(i);
+                                finishAffinity();
                             }
 
                         } catch (JSONException e) {
+                            dialog.dismiss();
                             e.printStackTrace();
                         }
                     }
 
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                        Toast.makeText(login.this, "Lỗi kết nối", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
                 }
         );

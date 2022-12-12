@@ -23,17 +23,25 @@
         android:backgroundTint="#f9f8f2"
 
         >
-        <ImageView
-
+        <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/imgHinh"
             android:layout_width="0dp"
             android:layout_height="120dp"
 
             android:layout_weight="3"
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_marginEnd="5dp"
 
+
+
+            android:scaleType="fitCenter"
+            android:src="@drawable/cafe2"
+            app:riv_border_color="#333333"
+            app:riv_corner_radius="15dp"
+            app:riv_mutate_background="true"
+
             />
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
@@ -91,6 +99,7 @@
                     android:textStyle="italic" />
 
                 <RatingBar
+                    android:id="@+id/rateBar"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

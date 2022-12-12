@@ -158,45 +158,6 @@
             android:background="@drawable/border_bottom_solid"
             android:backgroundTint="@color/bgColor"></View>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f9f8f2"
-
-            android:gravity="center_vertical"
-
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_icon_like">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:paddingHorizontal="10dp"
-                android:text="Đã thích"
-                android:textColor="@color/txtColor"
-                android:textSize="18dp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_pass_button"
-
-                >
-
-            </ImageView>
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -211,45 +172,7 @@
             android:layout_height="1dp"
             android:background="@drawable/border_bottom_solid"
             android:backgroundTint="@color/bgColor"></View>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f9f8f2"
 
-            android:gravity="center_vertical"
-
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_sodu_icon">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:paddingHorizontal="10dp"
-                android:text="Số dư"
-                android:textColor="@color/txtColor"
-                android:textSize="18dp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_pass_button"
-
-                >
-
-            </ImageView>
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -258,46 +181,7 @@
             android:backgroundTint="@color/bgColor"></View>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
 
-            android:background="#f9f8f2"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_setting_info">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:paddingHorizontal="10dp"
-                android:text="Dổi mật khẩu"
-                android:textColor="@color/txtColor"
-                android:textSize="18dp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_pass_button"
-
-                >
-
-            </ImageView>
-
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -305,45 +189,7 @@
             android:background="@drawable/border_bottom_solid"
             android:backgroundTint="@color/bgColor"></View>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f9f8f2"
 
-            android:gravity="center_vertical"
-
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_icon_about">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:paddingHorizontal="10dp"
-                android:text="Trung tâm trợ giúp"
-                android:textColor="@color/txtColor"
-                android:textSize="18dp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_pass_button"
-
-                >
-
-            </ImageView>
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -351,45 +197,7 @@
             android:background="@drawable/border_bottom_solid"
             android:backgroundTint="@color/bgColor"></View>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f9f8f2"
 
-            android:gravity="center_vertical"
-
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_icon_contact">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:paddingHorizontal="10dp"
-                android:text="Liên hệ"
-                android:textColor="@color/txtColor"
-                android:textSize="18dp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_pass_button"
-
-                >
-
-            </ImageView>
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.example.coffeapp.Model;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class Cafe implements Serializable {
     private int id;
@@ -10,6 +11,7 @@ public class Cafe implements Serializable {
     private String img;
     private Boolean like;
     private int so_luong;
+
 
     public int getSo_luong() {
         return so_luong;
@@ -76,5 +78,9 @@ public class Cafe implements Serializable {
 
     public void setRate(Integer rate) {
         this.rate = rate;
+    }
+    public String getStringPrice(){
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format(Double.parseDouble(this.price))+" VNĐ";
     }
 }

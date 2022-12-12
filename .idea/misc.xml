@@ -3,14 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/border_radius.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/dialog.xml" value="0.1485" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/ic_add_cart.xml" value="0.1225" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/ic_icon_delete.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/ic_icon_search.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/ic_logo.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/drawable/splash_background.xml" value="0.1485" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_cart.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_edit_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_index.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_info_product.xml" value="0.25416666666666665" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_singin.xml" value="0.18425925925925926" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/activity_test22.xml" value="0.25416666666666665" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/dialog_xac_nhan.xml" value="0.253125" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/fragment_infomation.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/fragment_list_product.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/fragment_list_product_like.xml" value="0.25416666666666665" />
@@ -18,6 +28,8 @@
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/item_coffee.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/layout/open_app.xml" value="0.25416666666666665" />
         <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1485" />
+        <entry key="..\:/Hoc/Coffe_App/androiAppCoffee/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1485" />
         <entry key="..\:/Hoc/Project/CoffeApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1825" />
         <entry key="..\:/Hoc/Project/CoffeApp/app/src/main/res/drawable/border_avatar.xml" value="0.1825" />
         <entry key="..\:/Hoc/Project/CoffeApp/app/src/main/res/drawable/border_bottom_solid.xml" value="0.1825" />

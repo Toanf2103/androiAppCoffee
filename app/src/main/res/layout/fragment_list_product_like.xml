@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_background"
-    android:paddingHorizontal="30dp"
+
     android:paddingVertical="10dp"
+    android:orientation="vertical"
 
     >
 
@@ -16,7 +17,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="15dp"
         android:paddingVertical="25dp"
-        android:weightSum="12"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,6 +25,7 @@
         >
 
         <EditText
+            android:id="@+id/dataSearch"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
@@ -36,52 +38,23 @@
 
         </EditText>
 
-        <RelativeLayout
-            android:layout_width="0dp"
+
+        <ImageButton
+            android:id="@+id/searchBtn"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_margin="0dp"
 
-            android:layout_weight="2"
-            android:padding="0dp">
+            android:src="@drawable/ic_icon_search"
+            android:background="@null"
+            >
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:padding="0dp"
-                android:src="@drawable/ic_icon_thongbao">
-
-            </ImageView>
-
-            <TextView
-
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/border_thongbao"
-                android:gravity="center"
-
-
-                android:padding="1dp"
-                android:text="10+"
-
-                android:textColor="#fff"
-                android:textSize="10dp"
-                android:textStyle="bold">
-
-            </TextView>
-
-
-        </RelativeLayout>
-
+        </ImageButton>
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:id="@+id/cartBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
             android:src="@drawable/ic_icon_cart">
 
         </ImageView>
@@ -90,7 +63,8 @@
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:divider="@null"
         android:dividerHeight="0dp"
         android:listSelector="@color/transparent"
@@ -100,4 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

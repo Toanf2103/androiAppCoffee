@@ -10,6 +10,9 @@ import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -42,6 +45,11 @@ public class ListProductFragment extends ListFragment{
     private List<Cafe> cafeArrayList;
     private User user;
     private SwapActivity swapActivityn ;
+    private ImageButton searchBtn;
+    private ImageView cartBtn;
+    private EditText dataSearch;
+    private String timKiem="";
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -103,6 +111,24 @@ public class ListProductFragment extends ListFragment{
 
 
         anhXa();
+        searchBtn=view.findViewById(R.id.searchBtn);
+        cartBtn=view.findViewById(R.id.cartBtn);
+        dataSearch=view.findViewById(R.id.dataSearch);
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swapActivityn = (SwapActivity) getActivity();
+                swapActivityn.cart(0);
+            }
+        });
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timKiem=dataSearch.getText().toString();
+
+                getAllSp();
+            }
+        });
 
         // Inflate the layout for this fragment
         apdater = new CafeApdater(getActivity(),R.layout.item_coffee,cafeArrayList,user);
@@ -112,22 +138,11 @@ public class ListProductFragment extends ListFragment{
     }
 
     private void anhXa(){
-//        service = new Ser();
-//
-        cafeArrayList = new ArrayList<>();
-//        cafeArrayList= service.getAllSp();
-//        cafeArrayList.add(new Cafe("Bạc xỉu","20000",1,R.drawable.cafe4,true));
-//        cafeArrayList.add(new Cafe("Đen đá không đường","30000",2,R.drawable.cafe4,false));
-//        cafeArrayList.add(new Cafe("Cafe sài gòn","40000",3,R.drawable.cafe4,true));
-//        cafeArrayList.add(new Cafe("Cafe trứng","50000",4,R.drawable.cafe4,false));
-//        cafeArrayList.add(new Cafe("Cafe đen","60000",5,R.drawable.cafe4,true));
-//        cafeArrayList.add(new Cafe("Cafe nhìu đen","80000",3,R.drawable.cafe4,false));
 
-//        cafeArrayList.add(new Cafe("Cafe-3","30000",3,R.drawable.cafe3));
-//        cafeArrayList.add(new Cafe("Cafe-4","40000",3,R.drawable.cafe4));
-//        cafeArrayList.add(new Cafe("Cafe-5","50000",3,R.drawable.cafe5));
-//        cafeArrayList.add(new Cafe("Cafe-6","60000",3,R.drawable.cafe6));
-//        cafeArrayList.add(new Cafe("Cafe-7","70000",3,R.drawable.cafe7));
+
+        cafeArrayList = new ArrayList<>();
+
+
 
     }
     public void getAllSp(){
@@ -135,6 +150,9 @@ public class ListProductFragment extends ListFragment{
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("id_user", user.getId());
+        if(!timKiem.isEmpty()){
+            params.put("tim_kiem",timKiem);
+        }
 
         client.post(getString(R.string.link_host)+"getAllSp.php",params,new JsonHttpResponseHandler(){
 
@@ -144,6 +162,7 @@ public class ListProductFragment extends ListFragment{
                         try {
 
                             if(response.getBoolean("trang_thai")){
+                                cafeArrayList.removeAll(cafeArrayList);
                                 JSONArray data = response.getJSONArray("data");
                                 for (int i=0;i<data.length();i++){
                                     Cafe cf = new Cafe();
@@ -153,16 +172,20 @@ public class ListProductFragment extends ListFragment{
                                     cf.setPrice(String.valueOf(obj.getDouble("gia")));
 
                                     cf.setImg(obj.getString("hinh_anh"));
+
                                     cf.setLike(obj.getBoolean("like"));
-                                    cf.setRate(3);
+                                    cf.setRate(obj.getInt("rate"));
                                     cafeArrayList.add(cf);
                                 }
+                            }else{
+                                Toast.makeText(getActivity(), "Không có sản phẩm tương tự", Toast.LENGTH_SHORT).show();
                             }
 
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
                         apdater.notifyDataSetChanged();
                     }
 

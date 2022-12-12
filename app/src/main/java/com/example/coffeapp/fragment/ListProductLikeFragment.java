@@ -9,6 +9,9 @@ import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,6 +43,10 @@ public class ListProductLikeFragment extends ListFragment {
     private List<Cafe> cafeArrayList;
     private User user;
     private SwapActivity swapActivityn ;
+    private ImageButton searchBtn;
+    private ImageView cartBtn;
+    private EditText dataSearch;
+    private String timKiem="";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -96,6 +103,26 @@ public class ListProductLikeFragment extends ListFragment {
         View view = inflater.inflate(R.layout.fragment_list_product_like, container, false);
         swapActivityn = (SwapActivity) getActivity();
         anhXa();
+        searchBtn=view.findViewById(R.id.searchBtn);
+        cartBtn=view.findViewById(R.id.cartBtn);
+        dataSearch=view.findViewById(R.id.dataSearch);
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swapActivityn = (SwapActivity) getActivity();
+                swapActivityn.cart(0);
+            }
+        });
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timKiem=dataSearch.getText().toString();
+
+                getAllSp();
+            }
+        });
+
+
         apdater = new CafeApdater(getActivity(),R.layout.item_coffee,cafeArrayList,user);
         setListAdapter(apdater);
         getAllSp();
@@ -108,16 +135,7 @@ public class ListProductLikeFragment extends ListFragment {
 
         cafeArrayList = new ArrayList<>();
 
-//        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.cafe2,true));
-//        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
-//        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,true));
-//        cafeArrayList.add(new Cafe("Cafe-2","20000",3,R.drawable.ip11,false));
 
-//        cafeArrayList.add(new Cafe("Cafe-3","30000",3,R.drawable.cafe3));
-//        cafeArrayList.add(new Cafe("Cafe-4","40000",3,R.drawable.cafe4));
-//        cafeArrayList.add(new Cafe("Cafe-5","50000",3,R.drawable.cafe5));
-//        cafeArrayList.add(new Cafe("Cafe-6","60000",3,R.drawable.cafe6));
-//        cafeArrayList.add(new Cafe("Cafe-7","70000",3,R.drawable.cafe7));
 
     }
     public void getAllSp(){
@@ -126,6 +144,9 @@ public class ListProductLikeFragment extends ListFragment {
         RequestParams params = new RequestParams();
 
         params.put("id_user", user.getId());
+        if(!timKiem.isEmpty()){
+            params.put("tim_kiem",timKiem);
+        }
 
         client.post(getString(R.string.link_host)+"getLike.php",params,new JsonHttpResponseHandler(){
 
@@ -133,6 +154,7 @@ public class ListProductLikeFragment extends ListFragment {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         try {
+                            cafeArrayList.removeAll(cafeArrayList);
                             if(response.getBoolean("trang_thai")){
                                 JSONArray data = response.getJSONArray("data");
                                 for (int i=0;i<data.length();i++){
@@ -145,7 +167,8 @@ public class ListProductLikeFragment extends ListFragment {
 
                                     cf.setImg(obj.getString("hinh_anh"));
                                     cf.setLike(obj.getBoolean("like"));
-                                    cf.setRate(4);
+                                    cf.setRate(obj.getInt("rate"));
+
                                     cafeArrayList.add(cf);
                                 }
                             }
